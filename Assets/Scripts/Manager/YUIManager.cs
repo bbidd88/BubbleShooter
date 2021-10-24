@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class YUIManager : YManger
+public class YUIManager : YManager
 {
     private YUIRoot Root = null;
     private YUIScene UIScene { get; set; } = null;

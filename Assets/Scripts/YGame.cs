@@ -8,21 +8,21 @@ public class YGame : MonoBehaviour
     static private bool IsAwake = false;
     static private bool GetIsAwake() { return IsAwake; }
 
-    static private Dictionary<System.Type, YManger> Managers = null;
+    static private Dictionary<System.Type, YManager> Managers = null;
     
 
     private void Awake()
     {
         if (Managers == null)
         {
-            Managers = new Dictionary<System.Type, YManger>();
+            Managers = new Dictionary<System.Type, YManager>();
         }
 
-        var types = System.AppDomain.CurrentDomain.GetAllDerivedTypes(typeof(YManger));
+        var types = System.AppDomain.CurrentDomain.GetAllDerivedTypes(typeof(YManager));
 
         foreach (System.Type type in types)
         {
-            YManger manager = (YManger)System.Activator.CreateInstance(type);
+            YManager manager = (YManager)System.Activator.CreateInstance(type);
             manager.OnAwake();
             Managers.Add(type, manager);
         }
@@ -33,9 +33,9 @@ public class YGame : MonoBehaviour
 
     private void Start()
     {
-        foreach(YManger manger in Managers.Values)
+        foreach(YManager manager in Managers.Values)
         {
-            manger.OnStart();
+            manager.OnStart();
         }
         
     }
