@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class YUIWidget : MonoBehaviour
+public class YUIWidget : YPrefab
 {
     private void Awake()
     {
