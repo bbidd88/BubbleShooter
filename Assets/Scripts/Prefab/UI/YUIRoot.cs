@@ -11,6 +11,7 @@ public class YUIRoot : MonoBehaviour
     public Dictionary<Type, YUIScene> Scenes { get; private set; } = new Dictionary<Type, YUIScene>();
     private void Awake()
     {
+        
         foreach (YUIScene scene in CanvasOverlay.GetComponentsInChildren<YUIScene>(true))
         {
             if (scene)

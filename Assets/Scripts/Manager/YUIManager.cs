@@ -6,13 +6,15 @@ public class YUIManager : YManager
 {
     private YUIRoot Root = null;
     private YUIScene UIScene { get; set; } = null;
+
     public override void OnAwake()
     {
         GameObject uiRootObj = GameObject.Find("@UIRoot");
         if (uiRootObj == null)
             uiRootObj = new GameObject("@UIRoot");
         Root = uiRootObj.SetComponent<YUIRoot>();
-        Object.DontDestroyOnLoad(Root);
+
+        GameObject.DontDestroyOnLoad(Root);
     }
 
     public override void OnStart()

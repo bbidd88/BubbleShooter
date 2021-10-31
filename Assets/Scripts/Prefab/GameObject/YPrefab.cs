@@ -4,9 +4,5 @@ using UnityEngine;
 
 public class YPrefab : MonoBehaviour
 {
-    [SerializeField]
-    private string Id = string.Empty;
-
-    public string ID => Id;
-    
+    public int ID { get; private set; }
 }

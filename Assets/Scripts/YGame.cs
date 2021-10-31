@@ -9,7 +9,6 @@ public class YGame : MonoBehaviour
     static private bool GetIsAwake() { return IsAwake; }
 
     static private Dictionary<System.Type, YManager> Managers = null;
-    
 
     private void Awake()
     {
@@ -26,18 +25,19 @@ public class YGame : MonoBehaviour
             manager.OnAwake();
             Managers.Add(type, manager);
         }
-
+        
         IsAwake = true;
         DontDestroyOnLoad(this);
     }
 
     private void Start()
     {
-        foreach(YManager manager in Managers.Values)
+        Get<YGameObjectManager>().OnInitInstance(this);
+
+        foreach (YManager manager in Managers.Values)
         {
             manager.OnStart();
         }
-        
     }
 
     public static T Get<T>()

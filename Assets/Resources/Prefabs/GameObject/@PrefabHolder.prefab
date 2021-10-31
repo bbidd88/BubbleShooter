@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4716168855737792224}
   - component: {fileID: 8958423350088444221}
   m_Layer: 0
-  m_Name: UIScenePrefabHolder
+  m_Name: '@PrefabHolder'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,5 +45,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PrefabType: 1
   Prefabs:
-  - {fileID: 9186951338007957941, guid: c9baf52c1cb03794dbd23fc050652007, type: 3}
-  - {fileID: 2912774450568958033, guid: c6392321ebb75c14fbc4ee15a10423df, type: 3}
+  - {fileID: 172092501441281404, guid: d1a5e1f4f57103744bfa7bf024515354, type: 3}
